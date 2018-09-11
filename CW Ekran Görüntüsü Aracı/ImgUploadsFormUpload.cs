@@ -150,7 +150,7 @@ public static class ImgUploadsFormUpload
                     string fullResponse = sr.ReadToEnd();
                     responseh = null;
                     responseh = response;
-                    ControlPanel hz = (ControlPanel)Application.OpenForms["ControlPanel"];
+                    AnaForm hz = (AnaForm)Application.OpenForms["ControlPanel"];
                     if (hz!=null)
                     {
                         hz.JsonCek(fullResponse);
@@ -160,7 +160,7 @@ public static class ImgUploadsFormUpload
                     }
                     else
                     {
-                        hz = new ControlPanel();
+                        hz = new AnaForm();
                         hz.JsonCek(fullResponse);
                         hz.Show();
                         sr.Close();

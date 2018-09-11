@@ -148,7 +148,7 @@ public static class HizliResimFormUpload
                     string fullResponse = sr.ReadToEnd();
                     responseh = null;
                     responseh = response;
-                    ControlPanel hz = (ControlPanel)Application.OpenForms["ControlPanel"];
+                    AnaForm hz = (AnaForm)Application.OpenForms["ControlPanel"];
                     if (hz!=null)
                     {
                         hz.ResponseCek(fullResponse);
@@ -159,7 +159,7 @@ public static class HizliResimFormUpload
                     }
                     else
                     {
-                        hz = new ControlPanel();
+                        hz = new AnaForm();
                         hz.ResponseCek(fullResponse);
                         hz.responselist.Add(fullResponse);
                         hz.Show();

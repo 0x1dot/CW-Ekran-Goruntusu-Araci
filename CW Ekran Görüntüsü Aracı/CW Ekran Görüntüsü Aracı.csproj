@@ -56,11 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlPanel.cs">
+    <Compile Include="AnaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlPanel.designer.cs">
-      <DependentUpon>ControlPanel.cs</DependentUpon>
+    <Compile Include="AnaForm.designer.cs">
+      <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DDControl.cs">
       <SubType>UserControl</SubType>
@@ -68,27 +68,26 @@
     <Compile Include="DDControl.designer.cs">
       <DependentUpon>DDControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="EkranAlintisiKırp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EkranAlintisiKırp.designer.cs">
+      <DependentUpon>EkranAlintisiKırp.cs</DependentUpon>
     </Compile>
     <Compile Include="ImgUploadsFormUpload.cs" />
     <Compile Include="HizliResimFormUpload.cs" />
     <Compile Include="Hizliresim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenShot.cs" />
-    <Compile Include="Settings.cs" />
-    <EmbeddedResource Include="ControlPanel.resx">
-      <DependentUpon>ControlPanel.cs</DependentUpon>
+    <Compile Include="EkranGoruntusu.cs" />
+    <EmbeddedResource Include="AnaForm.resx">
+      <DependentUpon>AnaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DDControl.resx">
       <DependentUpon>DDControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="EkranAlintisiKırp.resx">
+      <DependentUpon>EkranAlintisiKırp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

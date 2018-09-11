@@ -1,6 +1,6 @@
 namespace CW_Ekran_Görüntüsü_Aracý
 {
-    partial class Form1
+    partial class EkranAlintisiKýrp
     {
         /// <summary>
         /// Required designer variable.

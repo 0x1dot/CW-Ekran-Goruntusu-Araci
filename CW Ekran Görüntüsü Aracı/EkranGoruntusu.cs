@@ -7,12 +7,12 @@ using System.Collections.Generic;
 namespace CW_Ekran_Görüntüsü_Aracý
 {
 
-    class ScreenShot
+    class EkranGoruntusu
     {
 
-        public static bool saveToClipboard = false;
+        public static bool panoya_kopyala = false;
 
-        public static void CaptureImage(bool showCursor, Size curSize, Point curPos, Point SourcePoint, Point DestinationPoint, Rectangle SelectionRectangle, string FilePath, string extension,bool upload,int siteindex)
+        public static void Goruntuyu_al(bool showCursor, Size curSize, Point curPos, Point SourcePoint, Point DestinationPoint, Rectangle SelectionRectangle, string FilePath, string extension,bool upload,int siteindex)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace CW_Ekran_Görüntüsü_Aracý
 
                     }
 
-                    if (saveToClipboard)
+                    if (panoya_kopyala)
                     {
 
                         Image img = (Image)bitmap;
