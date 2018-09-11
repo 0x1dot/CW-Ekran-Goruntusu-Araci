@@ -1,9 +1,7 @@
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe.config
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.pdb
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.ControlPanel.resources
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.DDControl.resources
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.Form1.resources
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.Properties.Resources.resources
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csproj.GenerateResource.Cache
 c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.exe
@@ -11,3 +9,5 @@ c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Ara
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csprojResolveAssemblyReference.cache
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.AnaForm.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.EkranAlintisiKırp.resources
