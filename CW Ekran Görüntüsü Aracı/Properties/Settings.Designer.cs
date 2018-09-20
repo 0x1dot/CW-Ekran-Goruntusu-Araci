@@ -25,37 +25,61 @@ namespace CW_Ekran_Görüntüsü_Aracı.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool upload {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool imlec {
             get {
-                return ((bool)(this["upload"]));
+                return ((bool)(this["imlec"]));
             }
             set {
-                this["upload"] = value;
+                this["imlec"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point Location {
+            get {
+                return ((global::System.Drawing.Point)(this["Location"]));
+            }
+            set {
+                this["Location"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Mode {
+            get {
+                return ((int)(this["Mode"]));
+            }
+            set {
+                this["Mode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Time {
+            get {
+                return ((int)(this["Time"]));
+            }
+            set {
+                this["Time"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool clipboard {
+        public bool Uyar {
             get {
-                return ((bool)(this["clipboard"]));
+                return ((bool)(this["Uyar"]));
             }
             set {
-                this["clipboard"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("hizliresim.com")]
-        public string cmbSite {
-            get {
-                return ((string)(this["cmbSite"]));
-            }
-            set {
-                this["cmbSite"] = value;
+                this["Uyar"] = value;
             }
         }
     }

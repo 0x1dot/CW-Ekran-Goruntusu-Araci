@@ -1,4 +1,10 @@
-namespace CW_Ekran_Görüntüsü_Aracý
+ï»¿using CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties;
+using System.ComponentModel;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+
+namespace CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±
 {
     partial class AnaForm
     {
@@ -29,145 +35,319 @@ namespace CW_Ekran_Görüntüsü_Aracý
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolsYeni = new System.Windows.Forms.ToolStripButton();
+            this.toolsSecim = new System.Windows.Forms.ToolStripSplitButton();
+            this.teaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.peaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsZaman = new System.Windows.Forms.ToolStripSplitButton();
+            this.gecikmeYokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saniyeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saniyeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saniyeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saniyeToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saniyeToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsAyarlar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolsYukle = new System.Windows.Forms.ToolStripSplitButton();
+            this.hizliResimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Ä±mgUploadsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolsKaydet = new System.Windows.Forms.ToolStripButton();
+            this.toolsKopyala = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolsHakkinda = new System.Windows.Forms.ToolStripButton();
+            this.imgBox = new Cyotek.Windows.Forms.ImageBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.cbPanoyaKopyala = new System.Windows.Forms.CheckBox();
-            this.cbResimUpload = new System.Windows.Forms.CheckBox();
-            this.btnTamEkranAlintisi = new System.Windows.Forms.Button();
-            this.btnDikdörtgenAlinti = new System.Windows.Forms.Button();
-            this.rcResimUrl = new System.Windows.Forms.RichTextBox();
-            this.cmbUploadSite = new System.Windows.Forms.ComboBox();
-            this.dDControl = new CW_Ekran_Görüntüsü_Aracý.DDControl();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cbPanoyaKopyala
+            // toolStrip1
             // 
-            this.cbPanoyaKopyala.AutoSize = true;
-            this.cbPanoyaKopyala.Location = new System.Drawing.Point(9, 53);
-            this.cbPanoyaKopyala.Name = "cbPanoyaKopyala";
-            this.cbPanoyaKopyala.Size = new System.Drawing.Size(103, 17);
-            this.cbPanoyaKopyala.TabIndex = 6;
-            this.cbPanoyaKopyala.TabStop = false;
-            this.cbPanoyaKopyala.Text = "Panoya Kopyala";
-            this.cbPanoyaKopyala.UseVisualStyleBackColor = true;
-            this.cbPanoyaKopyala.CheckedChanged += new System.EventHandler(this.cbPanoyaKopyala_CheckedChanged);
-            this.cbPanoyaKopyala.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cbPanoyaKopyala_KeyUp);
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsYeni,
+            this.toolsSecim,
+            this.toolsZaman,
+            this.toolsAyarlar,
+            this.toolStripSeparator1,
+            this.toolsYukle,
+            this.toolStripSeparator2,
+            this.toolsKaydet,
+            this.toolsKopyala,
+            this.toolStripSeparator3,
+            this.toolsHakkinda});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(372, 47);
+            this.toolStrip1.TabIndex = 4;
             // 
-            // cbResimUpload
+            // toolsYeni
             // 
-            this.cbResimUpload.AutoSize = true;
-            this.cbResimUpload.Location = new System.Drawing.Point(113, 53);
-            this.cbResimUpload.Name = "cbResimUpload";
-            this.cbResimUpload.Size = new System.Drawing.Size(73, 17);
-            this.cbResimUpload.TabIndex = 6;
-            this.cbResimUpload.TabStop = false;
-            this.cbResimUpload.Text = "Upload Et";
-            this.cbResimUpload.UseVisualStyleBackColor = true;
-            this.cbResimUpload.CheckedChanged += new System.EventHandler(this.cbResimUpload_CheckedChanged);
-            this.cbResimUpload.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cbPanoyaKopyala_KeyUp);
+            this.toolsYeni.Image = ((System.Drawing.Image)(resources.GetObject("toolsYeni.Image")));
+            this.toolsYeni.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsYeni.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsYeni.Name = "toolsYeni";
+            this.toolsYeni.Size = new System.Drawing.Size(73, 44);
+            this.toolsYeni.Text = "Yeni";
+            this.toolsYeni.Click += new System.EventHandler(this.toolsYeni_Click);
             // 
-            // btnTamEkranAlintisi
+            // toolsSecim
             // 
-            this.btnTamEkranAlintisi.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTamEkranAlintisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTamEkranAlintisi.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnTamEkranAlintisi.Image = ((System.Drawing.Image)(resources.GetObject("btnTamEkranAlintisi.Image")));
-            this.btnTamEkranAlintisi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTamEkranAlintisi.Location = new System.Drawing.Point(9, 12);
-            this.btnTamEkranAlintisi.Name = "btnTamEkranAlintisi";
-            this.btnTamEkranAlintisi.Size = new System.Drawing.Size(120, 35);
-            this.btnTamEkranAlintisi.TabIndex = 0;
-            this.btnTamEkranAlintisi.TabStop = false;
-            this.btnTamEkranAlintisi.Text = "Tam Ekran Alýntýsý";
-            this.btnTamEkranAlintisi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTamEkranAlintisi.UseVisualStyleBackColor = false;
-            this.btnTamEkranAlintisi.Click += new System.EventHandler(this.btnTamEkranAlintisi_Click);
-            this.btnTamEkranAlintisi.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnTamEkranAlintisi_KeyUp);
+            this.toolsSecim.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.teaItem,
+            this.deaItem,
+            this.peaItem});
+            this.toolsSecim.Image = ((System.Drawing.Image)(resources.GetObject("toolsSecim.Image")));
+            this.toolsSecim.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsSecim.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsSecim.Name = "toolsSecim";
+            this.toolsSecim.Size = new System.Drawing.Size(88, 44);
+            this.toolsSecim.Tag = "";
+            this.toolsSecim.Text = "Mod";
+            this.toolsSecim.ToolTipText = "Ekran AlÄ±ntÄ±sÄ± Modu";
+            this.toolsSecim.Click += new System.EventHandler(this.toolsSecim_ButtonClick);
             // 
-            // btnDikdörtgenAlinti
+            // teaItem
             // 
-            this.btnDikdörtgenAlinti.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDikdörtgenAlinti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDikdörtgenAlinti.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDikdörtgenAlinti.Image = ((System.Drawing.Image)(resources.GetObject("btnDikdörtgenAlinti.Image")));
-            this.btnDikdörtgenAlinti.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDikdörtgenAlinti.Location = new System.Drawing.Point(135, 12);
-            this.btnDikdörtgenAlinti.Name = "btnDikdörtgenAlinti";
-            this.btnDikdörtgenAlinti.Size = new System.Drawing.Size(183, 35);
-            this.btnDikdörtgenAlinti.TabIndex = 2;
-            this.btnDikdörtgenAlinti.TabStop = false;
-            this.btnDikdörtgenAlinti.Text = "Dikdörtgen Biçimli Ekran Alýntýsý";
-            this.btnDikdörtgenAlinti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDikdörtgenAlinti.UseVisualStyleBackColor = false;
-            this.btnDikdörtgenAlinti.Click += new System.EventHandler(this.btnDikdörtgenAlinti_Click);
-            this.btnDikdörtgenAlinti.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnDikdörtgenAlinti_KeyUp);
+            this.teaItem.Name = "teaItem";
+            this.teaItem.Size = new System.Drawing.Size(243, 22);
+            this.teaItem.Text = "Tam Ekran AlÄ±ntÄ±sÄ±";
+            this.teaItem.Click += new System.EventHandler(this.SecimItem_Click);
             // 
-            // rcResimUrl
+            // deaItem
             // 
-            this.rcResimUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rcResimUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rcResimUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rcResimUrl.ForeColor = System.Drawing.Color.White;
-            this.rcResimUrl.Location = new System.Drawing.Point(9, 76);
-            this.rcResimUrl.Name = "rcResimUrl";
-            this.rcResimUrl.Size = new System.Drawing.Size(458, 146);
-            this.rcResimUrl.TabIndex = 9;
-            this.rcResimUrl.Text = "";
+            this.deaItem.Name = "deaItem";
+            this.deaItem.Size = new System.Drawing.Size(243, 22);
+            this.deaItem.Text = "DikdÃ¶rtgen BiÃ§imli Ekran AlÄ±ntÄ±sÄ±";
+            this.deaItem.Click += new System.EventHandler(this.SecimItem_Click);
             // 
-            // cmbUploadSite
+            // peaItem
             // 
-            this.cmbUploadSite.FormattingEnabled = true;
-            this.cmbUploadSite.Items.AddRange(new object[] {
-            "hizliresim.com",
-            "imguploads.net"});
-            this.cmbUploadSite.Location = new System.Drawing.Point(197, 51);
-            this.cmbUploadSite.Name = "cmbUploadSite";
-            this.cmbUploadSite.Size = new System.Drawing.Size(121, 21);
-            this.cmbUploadSite.TabIndex = 11;
+            this.peaItem.Name = "peaItem";
+            this.peaItem.Size = new System.Drawing.Size(243, 22);
+            this.peaItem.Text = "Pencere BiÃ§imli Ekran AlÄ±ntÄ±sÄ±";
+            this.peaItem.Click += new System.EventHandler(this.SecimItem_Click);
             // 
-            // dDControl
+            // toolsZaman
             // 
-            this.dDControl.BackColor = System.Drawing.SystemColors.Control;
-            this.dDControl.Location = new System.Drawing.Point(324, 12);
-            this.dDControl.Name = "dDControl";
-            this.dDControl.Size = new System.Drawing.Size(143, 35);
-            this.dDControl.TabIndex = 8;
-            this.dDControl.ItemClickedEvent += new CW_Ekran_Görüntüsü_Aracý.ItemClickedDelegate(this.dDControl_ItemClickedEvent);
+            this.toolsZaman.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gecikmeYokToolStripMenuItem,
+            this.saniyeToolStripMenuItem,
+            this.saniyeToolStripMenuItem1,
+            this.saniyeToolStripMenuItem2,
+            this.saniyeToolStripMenuItem3,
+            this.saniyeToolStripMenuItem4});
+            this.toolsZaman.Image = ((System.Drawing.Image)(resources.GetObject("toolsZaman.Image")));
+            this.toolsZaman.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsZaman.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsZaman.Name = "toolsZaman";
+            this.toolsZaman.Size = new System.Drawing.Size(103, 44);
+            this.toolsZaman.Text = "Geciktir";
+            this.toolsZaman.Click += new System.EventHandler(this.toolsZaman_ButtonClick);
+            // 
+            // gecikmeYokToolStripMenuItem
+            // 
+            this.gecikmeYokToolStripMenuItem.Name = "gecikmeYokToolStripMenuItem";
+            this.gecikmeYokToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.gecikmeYokToolStripMenuItem.Text = "Gecikme Yok";
+            this.gecikmeYokToolStripMenuItem.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // saniyeToolStripMenuItem
+            // 
+            this.saniyeToolStripMenuItem.Name = "saniyeToolStripMenuItem";
+            this.saniyeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.saniyeToolStripMenuItem.Text = "1 Saniye";
+            this.saniyeToolStripMenuItem.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // saniyeToolStripMenuItem1
+            // 
+            this.saniyeToolStripMenuItem1.Name = "saniyeToolStripMenuItem1";
+            this.saniyeToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.saniyeToolStripMenuItem1.Text = "2 Saniye";
+            this.saniyeToolStripMenuItem1.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // saniyeToolStripMenuItem2
+            // 
+            this.saniyeToolStripMenuItem2.Name = "saniyeToolStripMenuItem2";
+            this.saniyeToolStripMenuItem2.Size = new System.Drawing.Size(142, 22);
+            this.saniyeToolStripMenuItem2.Text = "3 Saniye";
+            this.saniyeToolStripMenuItem2.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // saniyeToolStripMenuItem3
+            // 
+            this.saniyeToolStripMenuItem3.Name = "saniyeToolStripMenuItem3";
+            this.saniyeToolStripMenuItem3.Size = new System.Drawing.Size(142, 22);
+            this.saniyeToolStripMenuItem3.Text = "4 Saniye";
+            this.saniyeToolStripMenuItem3.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // saniyeToolStripMenuItem4
+            // 
+            this.saniyeToolStripMenuItem4.Name = "saniyeToolStripMenuItem4";
+            this.saniyeToolStripMenuItem4.Size = new System.Drawing.Size(142, 22);
+            this.saniyeToolStripMenuItem4.Text = "5 Saniye";
+            this.saniyeToolStripMenuItem4.Click += new System.EventHandler(this.ZamanItem_Click);
+            // 
+            // toolsAyarlar
+            // 
+            this.toolsAyarlar.Image = ((System.Drawing.Image)(resources.GetObject("toolsAyarlar.Image")));
+            this.toolsAyarlar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsAyarlar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsAyarlar.Name = "toolsAyarlar";
+            this.toolsAyarlar.Size = new System.Drawing.Size(107, 44);
+            this.toolsAyarlar.Text = "SeÃ§enekler";
+            this.toolsAyarlar.Click += new System.EventHandler(this.toolsAyarlar_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 55);
+            this.toolStripSeparator1.Visible = false;
+            // 
+            // toolsYukle
+            // 
+            this.toolsYukle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hizliResimToolStripMenuItem,
+            this.Ä±mgUploadsToolStripMenuItem});
+            this.toolsYukle.Image = global::CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties.Resources.yukle;
+            this.toolsYukle.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsYukle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsYukle.Name = "toolsYukle";
+            this.toolsYukle.Size = new System.Drawing.Size(92, 44);
+            this.toolsYukle.Tag = "";
+            this.toolsYukle.Text = "YÃ¼kle";
+            this.toolsYukle.ToolTipText = "Ä°nternet\'e YÃ¼kle";
+            this.toolsYukle.Visible = false;
+            this.toolsYukle.ButtonClick += new System.EventHandler(this.toolsYukle_ButtonClick);
+            // 
+            // hizliResimToolStripMenuItem
+            // 
+            this.hizliResimToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("hizliResimToolStripMenuItem.Image")));
+            this.hizliResimToolStripMenuItem.Name = "hizliResimToolStripMenuItem";
+            this.hizliResimToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.hizliResimToolStripMenuItem.Text = "Hizli Resim";
+            this.hizliResimToolStripMenuItem.Click += new System.EventHandler(this.hizliResimToolStripMenuItem_Click);
+            // 
+            // Ä±mgUploadsToolStripMenuItem
+            // 
+            this.Ä±mgUploadsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("Ä±mgUploadsToolStripMenuItem.Image")));
+            this.Ä±mgUploadsToolStripMenuItem.Name = "Ä±mgUploadsToolStripMenuItem";
+            this.Ä±mgUploadsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.Ä±mgUploadsToolStripMenuItem.Text = "Img Uploads";
+            this.Ä±mgUploadsToolStripMenuItem.Click += new System.EventHandler(this.Ä±mgUploadsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 55);
+            this.toolStripSeparator2.Visible = false;
+            // 
+            // toolsKaydet
+            // 
+            this.toolsKaydet.Image = global::CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties.Resources.kaydet;
+            this.toolsKaydet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsKaydet.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsKaydet.Name = "toolsKaydet";
+            this.toolsKaydet.Size = new System.Drawing.Size(87, 44);
+            this.toolsKaydet.Text = "Kaydet";
+            this.toolsKaydet.Visible = false;
+            this.toolsKaydet.Click += new System.EventHandler(this.toolsKaydet_Click);
+            // 
+            // toolsKopyala
+            // 
+            this.toolsKopyala.Image = global::CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties.Resources.kopyala;
+            this.toolsKopyala.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsKopyala.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsKopyala.Name = "toolsKopyala";
+            this.toolsKopyala.Size = new System.Drawing.Size(143, 52);
+            this.toolsKopyala.Text = "Panoya Kopyala";
+            this.toolsKopyala.Visible = false;
+            this.toolsKopyala.Click += new System.EventHandler(this.toolsKopyala_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 47);
+            this.toolStripSeparator3.Visible = false;
+            // 
+            // toolsHakkinda
+            // 
+            this.toolsHakkinda.Image = global::CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties.Resources.information;
+            this.toolsHakkinda.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolsHakkinda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolsHakkinda.Name = "toolsHakkinda";
+            this.toolsHakkinda.Size = new System.Drawing.Size(101, 44);
+            this.toolsHakkinda.Text = "HakkÄ±nda";
+            this.toolsHakkinda.Visible = false;
+            this.toolsHakkinda.Click += new System.EventHandler(this.toolsHakkinda_Click);
+            // 
+            // imgBox
+            // 
+            this.imgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imgBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            this.imgBox.Location = new System.Drawing.Point(0, 47);
+            this.imgBox.Name = "imgBox";
+            this.imgBox.ShowPixelGrid = true;
+            this.imgBox.Size = new System.Drawing.Size(372, 0);
+            this.imgBox.TabIndex = 5;
+            this.imgBox.Visible = false;
             // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Olive;
-            this.ClientSize = new System.Drawing.Size(476, 74);
-            this.Controls.Add(this.cmbUploadSite);
-            this.Controls.Add(this.rcResimUrl);
-            this.Controls.Add(this.dDControl);
-            this.Controls.Add(this.cbResimUpload);
-            this.Controls.Add(this.cbPanoyaKopyala);
-            this.Controls.Add(this.btnTamEkranAlintisi);
-            this.Controls.Add(this.btnDikdörtgenAlinti);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(372, 47);
+            this.Controls.Add(this.imgBox);
+            this.Controls.Add(this.toolStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AnaForm";
-            this.Text = "CW Ekran Alýntýsý Aracý";
-            this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
-            this.Load += new System.EventHandler(this.AnaForm_Load);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Ekran AlÄ±ntÄ±sÄ± AracÄ±";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AnaEkran_HelpButtonClicked);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaEkran_FormClosing);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
-        #endregion
 
-        private System.Windows.Forms.Button btnTamEkranAlintisi;
-        private System.Windows.Forms.Button btnDikdörtgenAlinti;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.CheckBox cbPanoyaKopyala;
-        private DDControl dDControl;
-        private System.Windows.Forms.CheckBox cbResimUpload;
-        private System.Windows.Forms.RichTextBox rcResimUrl;
-        private System.Windows.Forms.ComboBox cmbUploadSite;
+        #endregion
+        public ToolStrip toolStrip1;
+        public ToolStripButton toolsYeni;
+        private ToolStripSplitButton toolsSecim;
+        private ToolStripMenuItem teaItem;
+        private ToolStripMenuItem deaItem;
+        private ToolStripSplitButton toolsZaman;
+        private ToolStripMenuItem gecikmeYokToolStripMenuItem;
+        private ToolStripMenuItem saniyeToolStripMenuItem;
+        private ToolStripMenuItem saniyeToolStripMenuItem1;
+        private ToolStripMenuItem saniyeToolStripMenuItem2;
+        private ToolStripMenuItem saniyeToolStripMenuItem3;
+        private ToolStripMenuItem saniyeToolStripMenuItem4;
+        private ToolStripButton toolsAyarlar;
+        private Cyotek.Windows.Forms.ImageBox imgBox;
+        private ToolStripSplitButton toolsYukle;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton toolsKaydet;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripButton toolsHakkinda;
+        private ToolStripMenuItem hizliResimToolStripMenuItem;
+        private ToolStripMenuItem Ä±mgUploadsToolStripMenuItem;
+        private SaveFileDialog saveFileDialog1;
+        private ToolStripButton toolsKopyala;
+        public ToolStripMenuItem peaItem;
     }
 }

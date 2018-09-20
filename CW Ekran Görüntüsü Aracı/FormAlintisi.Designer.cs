@@ -1,6 +1,12 @@
-namespace CW_Ekran_Görüntüsü_Aracý
+ï»¿using System;
+using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
+using WindowsHookLib;
+
+namespace CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±
 {
-    partial class EkranAlintisiKýrp
+    partial class FormAlintisi
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +34,32 @@ namespace CW_Ekran_Görüntüsü_Aracý
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
-            // Form1
-            // 
+            // FormAlintisi
+            //     
+            this.MouseHook = new MouseHook();
+            this.KeyboardHook = new KeyboardHook();
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(518, 416);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(292, 266);
             this.ControlBox = false;
-            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Opacity = 0.1D;
-            this.Text = "Form1";
-            this.TransparencyKey = System.Drawing.Color.Aqua;
+            this.KeyPreview = true;
+            this.Name = "FormAlintisi";
+            this.ShowInTaskbar = false;
+            this.TopMost = true;
+            this.TransparencyKey = System.Drawing.SystemColors.Window;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-
+        private KeyboardHook _KeyboardHook;
+        private MouseHook _MouseHook;
+        private IntPtr _object;
+        private Rectangle _objectRect;
     }
 }
-

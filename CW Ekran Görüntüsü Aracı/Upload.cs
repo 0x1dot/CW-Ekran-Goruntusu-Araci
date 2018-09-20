@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CW_Ekran_Görüntüsü_Aracı
 {
-   public static class Hizliresim
+   public static class Upload
     {
         public static byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
@@ -22,7 +22,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             Image returnImage = Image.FromStream(ms);
             return returnImage;
         }
-        public static void HizliResimeYukle(string localresponse = null, ListBox liste = null)
+        public static void HizliResimYukle(string localresponse = null, ListBox liste = null)
         {
             foreach (string item in liste.Items)
             {
@@ -30,10 +30,6 @@ namespace CW_Ekran_Görüntüsü_Aracı
                 {
                     if (!Directory.Exists(HizliResimFormUpload.folderpath)) Directory.CreateDirectory(HizliResimFormUpload.folderpath);
                     byteArrayToImage(Convert.FromBase64String(item)).Save(HizliResimFormUpload.folderpath + Path.GetRandomFileName() + ".png");
-                }
-                else
-                {
-                    HizliResimFormUpload.DownloadImage(item);
                 }
             }
             Dictionary<string, object> d = new Dictionary<string, object>();

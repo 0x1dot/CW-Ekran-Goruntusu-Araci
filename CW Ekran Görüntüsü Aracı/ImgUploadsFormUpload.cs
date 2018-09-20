@@ -103,7 +103,7 @@ public static class ImgUploadsFormUpload
             request.CookieContainer.Add(new Cookie(cookiname, cookievalue, "/", uri.Host));
         }
         request.ContentLength = formData.Length;
-       // request.ContentType = "application/json; charset=utf-8";
+        // request.ContentType = "application/json; charset=utf-8";
         request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8";
         request.KeepAlive = true;
         request.AllowAutoRedirect = true;
@@ -115,64 +115,34 @@ public static class ImgUploadsFormUpload
         // request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(System.Text.Encoding.Default.GetBytes("username" + ":" + "password")));
 
         // Send the form data to the request.
-        //  request.BeginGetRequestStream(new AsyncCallback(ReadCallback), request);
-        request.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallBack), request);
+        Stream requestStream = request.GetRequestStream();
+        requestStream.Write(formData1, 0, formData1.Length);
+        requestStream.Close();
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+        Stream responseStream = response.GetResponseStream();
+        StreamReader sr = new StreamReader(responseStream);
+
+        string fullResponse = sr.ReadToEnd();
+        responseh = null;
+        responseh = response;
+        YuklenenResim hz = (YuklenenResim)Application.OpenForms["YuklenenResim"];
+        if (hz != null)
+        {
+            hz.JsonCek(fullResponse);
+            hz.Show();
+            sr.Close();
+            hz.Focus();
+        }
+        else
+        {
+            hz = new YuklenenResim();
+            hz.JsonCek(fullResponse);
+            hz.Show();
+            sr.Close();
+            hz.Focus();
+        }
         return responseh;
-    }
-  static  AutoResetEvent signal = new AutoResetEvent(false);
-    private static void GetRequestStreamCallBack(IAsyncResult asyncResult)
-    {
-        HttpWebRequest request = (HttpWebRequest)asyncResult.AsyncState;
-        try
-        {
-            using (Stream requestStream = request.GetRequestStream())
-            {
-                requestStream.Write(formData1, 0, formData1.Length);
-                requestStream.Close();
-                request.BeginGetResponse(new AsyncCallback(GetResponseCallBack), request);
-                signal.WaitOne();
-            }
-        }
-        catch
-        {
-        }
-    }
-    private static void GetResponseCallBack(IAsyncResult asyncResult)
-    {
-        HttpWebRequest request = (HttpWebRequest)asyncResult.AsyncState;
-        try
-        {
-            using (HttpWebResponse response = (HttpWebResponse)request.EndGetResponse(asyncResult))
-            {
-                Stream responseStream = response.GetResponseStream();
-                using (StreamReader sr = new StreamReader(responseStream))
-                {
-                    string fullResponse = sr.ReadToEnd();
-                    responseh = null;
-                    responseh = response;
-                    AnaForm hz = (AnaForm)Application.OpenForms["ControlPanel"];
-                    if (hz!=null)
-                    {
-                        hz.JsonCek(fullResponse);
-                        hz.Show();
-                        sr.Close();
-                        hz.Focus();
-                    }
-                    else
-                    {
-                        hz = new AnaForm();
-                        hz.JsonCek(fullResponse);
-                        hz.Show();
-                        sr.Close();
-                        hz.Focus();
-                    }
-                    signal.Set();
-                }
-            }
-        }
-        catch
-        {
-        }
     }
     private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)
     {
@@ -227,86 +197,6 @@ public static class ImgUploadsFormUpload
         return formData;
     }
     public static string folderpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\cache\";
-    internal static void DownloadImage(string item)
-    {
-        if (!Directory.Exists(folderpath)) Directory.CreateDirectory(folderpath);
-        string imagename = Path.GetFileName(item);
-        if (!File.Exists(folderpath + imagename)) ImgUploadsFormUpload.DownloadFile(item, folderpath + imagename);
-        else
-        {
-            File.Delete(folderpath + imagename);
-            ImgUploadsFormUpload.DownloadFile(item, folderpath + imagename);
-        } 
-    }
-    public static int DownloadFile(String remoteFilename,String localFilename)
-    {
-        // Function will return the number of bytes processed
-        // to the caller. Initialize to 0 here.
-        int bytesProcessed = 0;
-
-        // Assign values to these objects here so that they can
-        // be referenced in the finally block
-        Stream remoteStream = null;
-        Stream localStream = null;
-        WebResponse response = null;
-
-        // Use a try/catch/finally block as both the WebRequest and Stream
-        // classes throw exceptions upon error
-        try
-        {
-            // Create a request for the specified remote file name
-            WebRequest request = WebRequest.Create(remoteFilename);
-            if (request != null)
-            {
-                // Send the request to the server and retrieve the
-                // WebResponse object 
-                response = request.GetResponse();
-                if (response != null)
-                {
-                    // Once the WebResponse object has been retrieved,
-                    // get the stream object associated with the response's data
-                    remoteStream = response.GetResponseStream();
-
-                    // Create the local file
-                    localStream = File.Create(localFilename);
-
-                    // Allocate a 1k buffer
-                    byte[] buffer = new byte[1024];
-                    int bytesRead;
-
-                    // Simple do/while loop to read from stream until
-                    // no bytes are returned
-                    do
-                    {
-                        // Read data (up to 1k) from the stream
-                        bytesRead = remoteStream.Read(buffer, 0, buffer.Length);
-
-                        // Write the data to the local file
-                        localStream.Write(buffer, 0, bytesRead);
-
-                        // Increment total bytes processed
-                        bytesProcessed += bytesRead;
-                    } while (bytesRead > 0);
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-        finally
-        {
-            // Close the response and streams objects here 
-            // to make sure they're closed even if an exception
-            // is thrown at some point
-            if (response != null) response.Close();
-            if (remoteStream != null) remoteStream.Close();
-            if (localStream != null) localStream.Close();
-        }
-
-        // Return total bytes processed to caller.
-        return bytesProcessed;
-    }
     public class FileParameter
     {
         public byte[] File { get; set; }

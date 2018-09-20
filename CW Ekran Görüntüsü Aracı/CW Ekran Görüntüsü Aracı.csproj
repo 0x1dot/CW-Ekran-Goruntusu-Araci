@@ -15,7 +15,7 @@
     </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -38,7 +38,24 @@
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cyotek.Windows.Forms.ImageBox">
+      <HintPath>..\..\CW Resim Editörü\CW Resim Editörü\bin\Debug\Cyotek.Windows.Forms.ImageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\CW Resim Editörü\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -54,51 +71,74 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsHookLib, Version=1.1.1.2, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\source_code_and_demo\Source Code and Demo\WindowsHookLib\WindowsHookLib\bin\Debug\WindowsHookLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnaForm.designer.cs">
+    <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DDControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DDControl.designer.cs">
-      <DependentUpon>DDControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EkranAlintisiKırp.cs">
+    <Compile Include="DikdortgenAlinti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EkranAlintisiKırp.designer.cs">
-      <DependentUpon>EkranAlintisiKırp.cs</DependentUpon>
+    <Compile Include="DikdortgenAlinti.designer.cs">
+      <DependentUpon>DikdortgenAlinti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAyar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAyar.Designer.cs">
+      <DependentUpon>FormAyar.cs</DependentUpon>
     </Compile>
     <Compile Include="ImgUploadsFormUpload.cs" />
     <Compile Include="HizliResimFormUpload.cs" />
-    <Compile Include="Hizliresim.cs" />
+    <Compile Include="Upload.cs" />
+    <Compile Include="FormAlintisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAlintisi.Designer.cs">
+      <DependentUpon>FormAlintisi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EkranGoruntusu.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SCapture.cs" />
+    <Compile Include="SCaptureException.cs" />
+    <Compile Include="YuklenenResim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YuklenenResim.Designer.cs">
+      <DependentUpon>YuklenenResim.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DDControl.resx">
-      <DependentUpon>DDControl.cs</DependentUpon>
+    <EmbeddedResource Include="DikdortgenAlinti.resx">
+      <DependentUpon>DikdortgenAlinti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EkranAlintisiKırp.resx">
-      <DependentUpon>EkranAlintisiKırp.cs</DependentUpon>
+    <EmbeddedResource Include="FormAyar.resx">
+      <DependentUpon>FormAyar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAlintisi.resx">
+      <DependentUpon>FormAlintisi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="YuklenenResim.resx">
+      <DependentUpon>YuklenenResim.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -112,10 +152,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\kopyala.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\kaydet.png" />
+    <None Include="Resources\yukle.png" />
+    <None Include="Resources\winapp.png" />
+    <None Include="Resources\fullresim.png" />
+    <None Include="Resources\seciliekran.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

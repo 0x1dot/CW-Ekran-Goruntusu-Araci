@@ -1,13 +1,38 @@
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe.config
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.pdb
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.DDControl.resources
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.Properties.Resources.resources
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csproj.GenerateResource.Cache
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.exe
-c:\users\muratq\documents\visual studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.pdb
-C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csprojResolveAssemblyReference.cache
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe.config
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.pdb
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.dll
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\MetroFramework.dll
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.xml
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.AnaForm.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.DDControl.resources
 C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.EkranAlintisiKırp.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.Properties.Resources.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.ResimGoruntule.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.YuklenenResim.resources
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csproj.GenerateResource.Cache
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.exe
+C:\Users\Muratq\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.pdb
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe.config
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.pdb
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.dll
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\MetroFramework.dll
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.dll
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\WindowsHookLib.dll
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.xml
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.xml
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\WindowsHookLib.pdb
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\WindowsHookLib.xml
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.AnaForm.resources
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.DikdortgenAlinti.resources
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.FormAyar.resources
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.Properties.Resources.resources
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.YuklenenResim.resources
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csproj.GenerateResource.Cache
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.exe
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.pdb
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW Ekran Görüntüsü Aracı.csprojResolveAssemblyReference.cache
+C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\obj\Debug\CW_Ekran_Görüntüsü_Aracı.FormAlintisi.resources

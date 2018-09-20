@@ -1,49 +1,216 @@
+ï»¿using CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±.Properties;
 using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
-using System.Text.RegularExpressions;
-using CW_Ekran_Görüntüsü_Aracý.Properties;
-using System.Web.Script.Serialization;
-using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WindowsHookLib;
 
-namespace CW_Ekran_Görüntüsü_Aracý
+namespace CW_Ekran_GÃ¶rÃ¼ntÃ¼sÃ¼_AracÄ±
 {
+    
     public partial class AnaForm : Form
     {
-        static int gecikme = 0;
-        string Yol;
+        int secim = 0;
+        int gecikme = 0;
+        Rectangle rcc;
+        bool save;
+        static List<byte[]> lst = new List<byte[]>();
         public AnaForm()
         {
             InitializeComponent();
-        }
-        public void key_press(object sender, KeyEventArgs e)
-        {
-            keyTest(e);
-        }
-        private void keyTest(KeyEventArgs e)
-        {
-
-            if (e.KeyCode.ToString() == "S")
+            if (Settings.Default.Location.X <= 0 || Settings.Default.Location.Y <= 0)
+                this.Location = new Point(50, 50);
+            else
+            this.Location = Settings.Default.Location;
+            switch (Settings.Default.Mode)
             {
-
-                GontuyuYakala(true);
-
+                case 0:
+                    secim = 0;
+                    teaItem.Checked = true;
+                    toolsSecim.Image = Resources.fullresim;
+                    break;
+                case 1:
+                    secim = 1;
+                    deaItem.Checked = true;
+                    toolsSecim.Image = Resources.seciliekran;
+                    break;
+                case 2:
+                    secim = 2;
+                    peaItem.Checked = true;
+                    toolsSecim.Image = Resources.winapp;
+                    break;
+                default:
+                    secim = 0;
+                    teaItem.Checked = true;
+                    toolsSecim.Image = Resources.fullresim;
+                    break;
             }
-
+            switch (Settings.Default.Time)
+            {
+                case 0:
+                    gecikme = 0;
+                    gecikmeYokToolStripMenuItem.Checked = true;
+                    break;
+                case 1:
+                    gecikme = 1;
+                    saniyeToolStripMenuItem.Checked = true;
+                    break;
+                case 2:
+                    gecikme = 2;
+                    saniyeToolStripMenuItem1.Checked = true;
+                    break;
+                case 3:
+                    gecikme = 3;
+                    saniyeToolStripMenuItem2.Checked = true;
+                    break;
+                case 4:
+                    gecikme = 4;
+                    saniyeToolStripMenuItem3.Checked = true;
+                    break;
+                case 5:
+                    gecikme = 5;
+                    saniyeToolStripMenuItem4.Checked = true;
+                    break;
+                default:
+                    gecikme = 0;
+                    gecikmeYokToolStripMenuItem.Checked = true;
+                    break;
+            }
         }
-        private void btnDikdörtgenAlinti_Click(object sender, EventArgs e)
+        private void ZamanItem_Click(object sender, EventArgs e)
         {
-           if(gecikme > 0) Thread.Sleep(gecikme*1000);
-            this.Hide();
-            EkranAlintisiKýrp form1 = new EkranAlintisiKýrp(gecikme,cbResimUpload.Checked,cmbUploadSite.SelectedIndex);
-            form1.InstanceRef = this;
-            form1.Show();
-            form1.Focus();
+            foreach (ToolStripMenuItem item in toolsZaman.DropDownItems)
+            {
+                if (((ToolStripMenuItem)sender).Text == item.Text)
+                {
+                    item.Checked = true;
+                    if (((ToolStripMenuItem)sender).Text == "Gecikme Yok") gecikme = 0;
+                    else gecikme = int.Parse(((ToolStripMenuItem)sender).Text.Split(' ')[0]);
+                }
+                else item.Checked = false;
+                Settings.Default.Time = gecikme;
+                Settings.Default.Save();
+            }
         }
-        public void GontuyuYakala(bool imlec)
+        private void toolsZaman_ButtonClick(object sender, EventArgs e)
+        {
+            toolsZaman.ShowDropDown();
+        }
+        private void AnaEkran_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                e.Cancel = true;
+            }
+            catch
+            {
+            }
+            MessageBox.Show("Bu program 0x1dot tarafÄ±ndan Cyber-Warrior.Org ailesi iÃ§in kodlanmÄ±ÅŸtÄ±r", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void SecimItem_Click(object sender, EventArgs e)
+        {
+            foreach (ToolStripMenuItem item in toolsSecim.DropDownItems)
+            {
+                if (((ToolStripMenuItem)sender).Text == item.Text)
+                {
+                    item.Checked = true;
+                    switch (((ToolStripMenuItem)sender).Text)
+                    {
+                        case "Tam Ekran AlÄ±ntÄ±sÄ±":
+                            toolsSecim.Image = Resources.fullresim;
+                            secim = 0;
+                            Settings.Default.Mode = 0;
+                            break;
+                        case "DikdÃ¶rtgen BiÃ§imli Ekran AlÄ±ntÄ±sÄ±":
+                            toolsSecim.Image = Resources.seciliekran;
+                            secim = 1;
+                            Settings.Default.Mode = 1;
+                            break;
+                        case "Pencere BiÃ§imli Ekran AlÄ±ntÄ±sÄ±":
+                            toolsSecim.Image = Resources.winapp;
+                            secim = 2;
+                            Settings.Default.Mode = 2;
+                            break;
+                    }
+                    Settings.Default.Save();
+                }
+                else item.Checked = false;
+            }
+        }
+        private void toolsSecim_ButtonClick(object sender, EventArgs e)
+        {
+            toolsSecim.ShowDropDown();
+        }
+        private void AnaEkran_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.Default.Location = this.Location;
+            Settings.Default.Save();
+            if (Settings.Default.Uyar && save)
+            {
+                DialogResult d = MessageBox.Show("Dosya KaydedilmemiÅŸ Kaydetmek istermisiniz?","Bilgi",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
+                if (d == DialogResult.Yes)
+                {
+                    toolsKaydet_Click(sender, e);
+                    if(save) e.Cancel = true;
+                }
+                if (d == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+        private void toolsAyarlar_Click(object sender, EventArgs e)
+        {
+            FormAyar frm = new FormAyar();
+            if (frm.ShowDialog() == DialogResult.OK) Settings.Default.Save();
+        }
+        private void toolsYeni_Click(object sender, EventArgs e)
+        {
+            save = true;
+            switch (secim)
+            {
+                case 0:
+                    this.Hide();
+                    if (gecikme > 0)
+                    {
+                        Thread.Sleep(1000 * gecikme);
+                    }
+                    else Thread.Sleep(170);
+                    GoruntuyuYakala(Settings.Default.imlec,rcc);
+                    break;
+                case 1:
+                    if (gecikme > 0) Thread.Sleep(gecikme * 1000);
+                    else Thread.Sleep(170);
+                    DikdortgenAlinti dikdortgen_alinti = new DikdortgenAlinti();
+                    dikdortgen_alinti.refForm = this;
+                    dikdortgen_alinti.Show();
+                    dikdortgen_alinti.Focus();
+                    break;
+                case 2:
+                    this.WindowState = FormWindowState.Minimized;
+                    this.Hide();
+                    if (gecikme > 0) Thread.Sleep(gecikme * 1000);
+                    else Thread.Sleep(170);
+                    FormAlintisi objForm  = new FormAlintisi();
+                    objForm.refForm = this;
+                    objForm.Owner = this;
+                    objForm.Show();
+                    break;
+            }
+        }
+        public void GoruntuyuYakala(bool imlec,Rectangle rc)
         {
             try
             {
@@ -51,167 +218,149 @@ namespace CW_Ekran_Görüntüsü_Aracý
                 Size imlec_boyut = new Size();
                 imlec_boyut.Height = Cursor.Current.Size.Height;
                 imlec_boyut.Width = Cursor.Current.Size.Width;
-
-                Yol = "";
-
-                if (!EkranGoruntusu.panoya_kopyala)
+                Rectangle Sinirlar;
+                if (rc.Width != 0 && rc.Height != 0 && rc.X != 0 && rc.Y != 0)
                 {
-                    saveFileDialog1.DefaultExt = "png";
-                    saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                    saveFileDialog1.FileName = Path.GetRandomFileName() + ".png";
-                    saveFileDialog1.Filter = "png files (*.png)|*.png|jpg files (*.jpg)|*.jpg|gif files (*.gif)|*.gif|tiff files (*.tiff)|*.tiff|bmp files (*.bmp)|*.bmp";
-                    saveFileDialog1.Title = "Save screenshot to...";
-                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                        Yol = saveFileDialog1.FileName;
-                }
-                if (Yol != "" || EkranGoruntusu.panoya_kopyala)
-                {
-
-                    //Conceal this form while the screen capture takes place
-                    this.Hide();
-                    this.TopMost = false;
-
-                    //Allow 250 milliseconds for the screen to repaint itself (we don't want to include this form in the capture)
-                    if (gecikme > 0)
-                    {
-                        Thread.Sleep(1000 * gecikme);
-                    }
-                    else Thread.Sleep(250);
-
-                    Rectangle Sinirlar = Screen.GetBounds(Screen.GetBounds(Point.Empty));
-                    string fi = "";
-
-                    if (Yol != "")
-                    {
-
-                        fi = new FileInfo(Yol).Extension;
-
-                    }
-
-                    EkranGoruntusu.Goruntuyu_al(imlec, imlec_boyut, imlec_pozisyon, Point.Empty, Point.Empty, Sinirlar, Yol, fi,cbResimUpload.Checked,cmbUploadSite.SelectedIndex);
-
-                    //The screen has been captured and saved to a file so bring this form back into the foreground
+                    Bitmap image1 = new Bitmap(rc.Width, rc.Height);
+                    Graphics g = Graphics.FromImage(image1);
+                    g.CopyFromScreen(new Point(rc.X, rc.Y), Point.Empty, rc.Size);
+                    Image image = SCapture.Control(Control.MousePosition, Settings.Default.imlec);
+                    imgBox.Image = image1;
                     this.Show();
-                    this.TopMost = true;
+                    this.WindowState = FormWindowState.Maximized;
+                    image.Dispose();
+                    Formislemleri();
                 }
+                else
+                {
+                     Sinirlar = Screen.GetBounds(Screen.GetBounds(Point.Empty));
+                    Goruntuyu_al(imlec, imlec_boyut, imlec_pozisyon, Point.Empty, Point.Empty, Sinirlar);
+                    Formislemleri();
+                }
+                
             }
             catch
             {
-                this.Show();
-                this.TopMost = true;
             }
-           
         }
-        private void btnTamEkranAlintisi_Click(object sender, EventArgs e)
+        public void Formislemleri()
         {
-            GontuyuYakala(false);
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            this.Height = Screen.PrimaryScreen.Bounds.Height - 50;
+            this.Width = Screen.PrimaryScreen.Bounds.Width;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.WindowState = FormWindowState.Maximized;
+            imgBox.Visible = true;
+            toolStripSeparator1.Visible = true;
+            toolsYukle.Visible = true;
+            toolStripSeparator2.Visible = true;
+            toolsKaydet.Visible = true;
+            toolsKopyala.Visible = true;
+            toolStripSeparator3.Visible = true;
+            toolsHakkinda.Visible = true;
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+            this.Show();
+            this.Focus();
         }
-        private void FillItemList()
+        public void Goruntuyu_al(bool showCursor, Size curSize, Point curPos, Point SourcePoint, Point DestinationPoint, Rectangle SelectionRectangle)
         {
-            List<string> lstSting = new List<string>();
-            for (int i = 0; i <= 6; i++)
+            try
             {
-                if (i==0) lstSting.Add("Gecikme Yok");
-                else lstSting.Add(i.ToString()+" Saniye");
-            }
-            dDControl.FillControlList(lstSting);
-        }
-        private void AnaForm_Load(object sender, EventArgs e)
-        {
-            cmbUploadSite.SelectedItem = Settings.Default.cmbSite;
-            cbResimUpload.Checked = Settings.Default.upload;
-            if (cbResimUpload.Checked) cmbUploadSite.Visible = true;
-            else cmbUploadSite.Visible = false;
-            cbPanoyaKopyala.Checked = Settings.Default.clipboard;
-            this.KeyUp += new KeyEventHandler(key_press);
-            FillItemList();
-        }
-        void dDControl_ItemClickedEvent(object sender, ToolStripItemClickedEventArgs e)
-        {
-            if (e.ClickedItem.Text != "Gecikme Yok") gecikme = int.Parse(e.ClickedItem.Text.Split(' ')[0]);
-        }
-        private void cbPanoyaKopyala_CheckedChanged(object sender, EventArgs e)
-        {
-            EkranGoruntusu.panoya_kopyala = cbPanoyaKopyala.Checked;
-        }
-        private void cbPanoyaKopyala_KeyUp(object sender, KeyEventArgs e)
-        {
-            keyTest(e);
-        }
-        private void btnDikdörtgenAlinti_KeyUp(object sender, KeyEventArgs e)
-        {
-            keyTest(e);
-        }
-        private void btnTamEkranAlintisi_KeyUp(object sender, KeyEventArgs e)
-        {
-            keyTest(e);
-        }
-        public List<string> responselist = new List<string>();
-        public void ResponseCek(string response)
-        {
-            Control.CheckForIllegalCrossThreadCalls = false;
-            rcResimUrl.Text = string.Empty;
-            string regex = "<a href=\"(.+?)\"><i class=\"material-icons\">&#xE157;</i></a>";
-            MatchCollection mt = Regex.Matches(response, regex);
-            foreach (Match item in mt)
-            {
-                if (item.Groups[1].ToString().Contains("i.hizliresim"))
+                Bitmap bitmap = new Bitmap(SelectionRectangle.Width, SelectionRectangle.Height);
+                Graphics g = Graphics.FromImage(bitmap);
+                g.CopyFromScreen(SourcePoint, DestinationPoint, SelectionRectangle.Size);
+                if (showCursor)
                 {
-                    if (rcResimUrl.InvokeRequired)
-                    {
-                        rcResimUrl.Invoke(new Action(delegate ()
-                        {
-                            rcResimUrl.Text += item.Groups[1].ToString() + "\n";
-                        }));
-                    }                   
+                    Rectangle cursorBounds = new Rectangle(curPos, curSize);
+                    Cursors.Default.Draw(g, cursorBounds);
                 }
+                imgBox.Image = bitmap;
+                Formislemleri();
+            }
+            catch
+            {
             }
         }
-        public void JsonCek(string response)
+        private void toolsYukle_ButtonClick(object sender, EventArgs e)
         {
-            Control.CheckForIllegalCrossThreadCalls = false;
-            rcResimUrl.Text = string.Empty;
-            dynamic stuff = JObject.Parse(response);
-            if (stuff.status_code == "200")
+            toolsYukle.ShowDropDown();
+        }
+        private void toolsKaydet_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.DefaultExt = "png";
+            saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog1.FileName = Path.GetRandomFileName() + ".png";
+            saveFileDialog1.Filter = "png files (*.png)|*.png|jpg files (*.jpg)|*.jpg|gif files (*.gif)|*.gif|tiff files (*.tiff)|*.tiff|bmp files (*.bmp)|*.bmp";
+            saveFileDialog1.Title = "GÃ¶rÃ¼ntÃ¼yÃ¼ Kaydet";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (rcResimUrl.InvokeRequired)
+                string fi = new FileInfo(saveFileDialog1.FileName).Extension;
+                switch (fi)
                 {
-                    rcResimUrl.Invoke(new Action(delegate ()
-                    {
-                        rcResimUrl.Text = stuff.image.image.url+"\n";
-                    }));
+                    case ".bmp":
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Bmp);
+                        break;
+                    case ".jpg":
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Jpeg);
+                        break;
+                    case ".gif":
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Gif);
+                        break;
+                    case ".tiff":
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Tiff);
+                        break;
+                    case ".png":
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Png);
+                        break;
+                    default:
+                        imgBox.Image.Save(saveFileDialog1.FileName, ImageFormat.Png);
+                        break;
                 }
-                MessageBox.Show("Dosya yükleme iþlemi tamamlandý", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Ýþllem Baþarýsýz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                save = false;
+                MessageBox.Show("Dosya baÅŸarÄ±lÄ± bir ÅŸekilde kaydedildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void cbResimUpload_CheckedChanged(object sender, EventArgs e)
+        private void toolsKopyala_Click(object sender, EventArgs e)
         {
-            if (cbResimUpload.Checked)
+            if (!panoyaKopyala(imgBox.Image)) MessageBox.Show("Bilinmeyen bir hata oluÅŸtu!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private bool panoyaKopyala(Image image)
+        {
+            try
             {
-                rcResimUrl.Visible = true;
-                cmbUploadSite.Visible = true;
-                this.Height = 270;
+                Clipboard.SetImage(image);
+                return true;
             }
-            else
+            catch
             {
-                rcResimUrl.Visible = false;
-                cmbUploadSite.Visible = false;
-                this.Height = 113;
+                return false;
             }
         }
-        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void toolsHakkinda_Click(object sender, EventArgs e)
         {
-            DialogResult d = MessageBox.Show("Çýkmak istediðinize emin misiniz?", "Bilgi", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-            Settings.Default.cmbSite = cmbUploadSite.SelectedItem.ToString();
-            Settings.Default.upload = cbResimUpload.Checked;
-            Settings.Default.clipboard = cbPanoyaKopyala.Checked;
-            Settings.Default.Save();
-            if (d == DialogResult.Yes) Application.ExitThread();
-            else e.Cancel = true;
+            AnaEkran_HelpButtonClicked(sender,null);
+        }
+        private void hizliResimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lst.Clear();
+            lst.Add(Upload.imageToByteArray(imgBox.Image));
+            Upload.HizliResimYukle(null, Listele());
+        }
+        private void Ä±mgUploadsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lst.Clear();
+            lst.Add(Upload.imageToByteArray(imgBox.Image));
+            Upload.imguploadsYukle(null, Listele());
+        }
+        public static ListBox Listele()
+        {
+            ListBox lstbx = new ListBox();
+            foreach (byte[] item in lst)
+            {
+                lstbx.Items.Add(Convert.ToBase64String(item));
+            }
+            return lstbx;
         }
     }
 }
