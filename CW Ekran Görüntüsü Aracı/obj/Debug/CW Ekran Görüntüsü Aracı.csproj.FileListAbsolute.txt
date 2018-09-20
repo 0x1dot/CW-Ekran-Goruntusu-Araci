@@ -19,7 +19,6 @@ C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Ara
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.exe
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\CW Ekran Görüntüsü Aracı.pdb
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.dll
-C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\MetroFramework.dll
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Newtonsoft.Json.dll
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\WindowsHookLib.dll
 C:\Users\0x1dot\Documents\Visual Studio 2015\Projects\CW Ekran Görüntüsü Aracı\CW Ekran Görüntüsü Aracı\bin\Debug\Cyotek.Windows.Forms.ImageBox.xml
