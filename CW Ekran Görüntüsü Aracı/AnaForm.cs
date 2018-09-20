@@ -343,15 +343,28 @@ namespace CW_Ekran_Görüntüsü_Aracı
         }
         private void hizliResimToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lst.Clear();
-            lst.Add(Upload.imageToByteArray(imgBox.Image));
-            Upload.HizliResimYukle(null, Listele());
+            try
+            {
+                lst.Clear();
+                lst.Add(Upload.imageToByteArray(imgBox.Image));
+                Upload.HizliResimYukle(null, Listele());
+            }
+            catch
+            {
+                MessageBox.Show("Hata oluştu, tekrar deneyiniz.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
         private void ımgUploadsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try { 
             lst.Clear();
             lst.Add(Upload.imageToByteArray(imgBox.Image));
             Upload.imguploadsYukle(null, Listele());
+            }
+            catch
+            {
+                MessageBox.Show("Hata oluştu, tekrar deneyiniz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static ListBox Listele()
         {

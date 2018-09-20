@@ -126,7 +126,7 @@ public static class HizliResimFormUpload
         responseh = null;
         responseh = response;
         YuklenenResim yk = (YuklenenResim)Application.OpenForms["YuklenenResim"];
-        if (yk != null)
+        if (yk != null && yk.Visible != true || yk != null && yk.Visible == true)
         {
             yk.ResponseCek(fullResponse);
             yk.Show();
@@ -141,7 +141,6 @@ public static class HizliResimFormUpload
             sr.Close();
             yk.Focus();
         }
-        MessageBox.Show("Dosya yükleme işlemi tamamlandı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         return responseh;
     }
     private static byte[] GetMultipartFormData(Dictionary<string, object> postParameters, string boundary)

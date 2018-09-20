@@ -81,7 +81,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.toolsHakkinda});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(372, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(474, 55);
             this.toolStrip1.TabIndex = 4;
             // 
             // toolsYeni
@@ -90,7 +90,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.toolsYeni.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolsYeni.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolsYeni.Name = "toolsYeni";
-            this.toolsYeni.Size = new System.Drawing.Size(73, 44);
+            this.toolsYeni.Size = new System.Drawing.Size(73, 52);
             this.toolsYeni.Text = "Yeni";
             this.toolsYeni.Click += new System.EventHandler(this.toolsYeni_Click);
             // 
@@ -215,7 +215,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.toolsYukle.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolsYukle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolsYukle.Name = "toolsYukle";
-            this.toolsYukle.Size = new System.Drawing.Size(92, 44);
+            this.toolsYukle.Size = new System.Drawing.Size(92, 52);
             this.toolsYukle.Tag = "";
             this.toolsYukle.Text = "Yükle";
             this.toolsYukle.ToolTipText = "İnternet\'e Yükle";
@@ -250,7 +250,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.toolsKaydet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolsKaydet.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolsKaydet.Name = "toolsKaydet";
-            this.toolsKaydet.Size = new System.Drawing.Size(87, 44);
+            this.toolsKaydet.Size = new System.Drawing.Size(87, 52);
             this.toolsKaydet.Text = "Kaydet";
             this.toolsKaydet.Visible = false;
             this.toolsKaydet.Click += new System.EventHandler(this.toolsKaydet_Click);
@@ -280,7 +280,6 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.toolsHakkinda.Name = "toolsHakkinda";
             this.toolsHakkinda.Size = new System.Drawing.Size(101, 44);
             this.toolsHakkinda.Text = "Hakkında";
-            this.toolsHakkinda.Visible = false;
             this.toolsHakkinda.Click += new System.EventHandler(this.toolsHakkinda_Click);
             // 
             // imgBox
@@ -288,10 +287,10 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.imgBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imgBox.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-            this.imgBox.Location = new System.Drawing.Point(0, 47);
+            this.imgBox.Location = new System.Drawing.Point(0, 55);
             this.imgBox.Name = "imgBox";
             this.imgBox.ShowPixelGrid = true;
-            this.imgBox.Size = new System.Drawing.Size(372, 0);
+            this.imgBox.Size = new System.Drawing.Size(474, 0);
             this.imgBox.TabIndex = 5;
             this.imgBox.Visible = false;
             // 
@@ -300,7 +299,7 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(372, 47);
+            this.ClientSize = new System.Drawing.Size(474, 47);
             this.Controls.Add(this.imgBox);
             this.Controls.Add(this.toolStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -308,8 +307,6 @@ namespace CW_Ekran_Görüntüsü_Aracı
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ekran Alıntısı Aracı";
