@@ -55,9 +55,8 @@ namespace CW_Ekran_Görüntüsü_Aracı
         {
             try
             {
+                if (listBox1.SelectedItem == null) return;
                 HttpWebRequest lxRequest = (HttpWebRequest)WebRequest.Create(listBox1.SelectedItem.ToString());
-
-
                 lxRequest.Method = "GET";
                 lxRequest.Accept = "image/png,image/*";
                 lxRequest.KeepAlive = false;
@@ -75,22 +74,6 @@ namespace CW_Ekran_Görüntüsü_Aracı
                     }
                     imgBox.Image = Image.FromStream(tempMemStream);
                 }
-                
-                // pictureBox1.Image = new Bitmap(new MemoryStream(outData));
-
-
-
-                //String lsResponse = string.Empty;
-                //HttpWebResponse lxResponse = (HttpWebResponse)lxRequest.GetResponse();
-                //using (StreamReader lxResponseStream = new StreamReader(lxResponse.GetResponseStream()))
-                //{
-                //    lsResponse = lxResponseStream.ReadToEnd();
-                //    lxResponseStream.Close();
-                //}
-                //MemoryStream ms = new MemoryStream();
-                //byte[] lnByte = Encoding.UTF8.GetBytes(lsResponse);
-                ////ms.Write(lnByte,0,lnByte.Length);
-
             }
             catch
             {
